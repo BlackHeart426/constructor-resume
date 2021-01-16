@@ -1,9 +1,12 @@
 <template>
-  <h1>Резюме Nickname</h1>
+  <h1>Резюме Nickname {{ value }}</h1>
 </template>
 
 <script>
 export default {
+  props: [
+      'value'
+  ],
   name: "AppTitle"
 }
 </script>

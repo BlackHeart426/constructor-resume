@@ -5,6 +5,7 @@
     <app-avatar/>
     <app-subtitle/>
     <app-text/>
+    <component v-for="(item, idx) of content" :is="item" :key="idx" :value="item.value"></component>
   </div>
 </template>
 
@@ -24,7 +25,20 @@ export default {
   name: "AppContent",
   data() {
     return {
-      content: [],
+      content: [
+        {
+          nameComponent: 'app-title',
+          value: '12312'
+        },
+        {
+          nameComponent: 'app-avatar',
+          value: '12312'
+        },
+        {
+          nameComponent: 'app-subtitle',
+          value: '12312'
+        },
+      ],
 
     }
   },
