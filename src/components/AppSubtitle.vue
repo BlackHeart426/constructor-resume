@@ -1,10 +1,13 @@
 <template>
-  <h2>Опыт работы</h2>
+  <h2>{{ value }}</h2>
 </template>
 
 <script>
 export default {
-name: "AppSubtitle"
+  props: [
+      'value'
+  ],
+  name: "AppSubtitle"
 }
 </script>
 

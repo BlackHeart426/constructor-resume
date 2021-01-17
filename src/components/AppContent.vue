@@ -1,11 +1,9 @@
 <template>
   <div class="card card-w70">
     <h3 v-if="content.length === 0">Добавьте первый блок, чтобы увидеть результат</h3>
-    <app-title/>
-    <app-avatar/>
-    <app-subtitle/>
-    <app-text/>
-    <component v-for="(item, idx) of content" :is="item" :key="idx" :value="item.value"></component>
+
+    <component v-for="(item, idx) of content" :is=item.nameComponent :key="idx" :value=item.value></component>
+
   </div>
 </template>
 
@@ -16,6 +14,9 @@ import AppSubtitle from "@/components/AppSubtitle";
 import AppText from "@/components/AppText";
 
 export default {
+  props: [
+      'content'
+  ],
   components: {
     AppTitle,
     AppAvatar,
@@ -23,25 +24,6 @@ export default {
     AppText,
   },
   name: "AppContent",
-  data() {
-    return {
-      content: [
-        {
-          nameComponent: 'app-title',
-          value: '12312'
-        },
-        {
-          nameComponent: 'app-avatar',
-          value: '12312'
-        },
-        {
-          nameComponent: 'app-subtitle',
-          value: '12312'
-        },
-      ],
-
-    }
-  },
 }
 </script>
 
